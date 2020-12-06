@@ -1,24 +1,15 @@
 package me.gav06.halsplus;
 
-import me.gav06.halsplus.mods.FakePlayer;
-import me.gav06.halsplus.mods.Fullbright;
-import me.gav06.halsplus.mods.Rage;
-import me.gav06.halsplus.mods.Step;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
+import me.gav06.halsplus.mods.*;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.lwjgl.opengl.Display;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 @Mod(
         modid = Halsplus.MOD_ID,
@@ -27,8 +18,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 )
 public class Halsplus {
 
-    public static final String MOD_ID = "halsplus";
-    public static final String MOD_NAME = "Halsplus";
+    public static final String MOD_ID = "gavhack";
+    public static final String MOD_NAME = "Gavhack";
     public static final String VERSION = "1.0-SNAPSHOT";
 
 
@@ -40,7 +31,8 @@ public class Halsplus {
 
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
-        Display.setTitle("Hal's Client+");
+        Display.setTitle("Gav's Client");
+
     }
 
 
@@ -50,15 +42,23 @@ public class Halsplus {
         MinecraftForge.EVENT_BUS.register(new KeyEvent());
         MinecraftForge.EVENT_BUS.register(new DrawHUD());
 
+        Minecraft.getMinecraft().gameSettings.gammaSetting = 1;
 
         //registering modules
         array_hacks.add(new Fullbright());
         array_hacks.add(new Step());
         array_hacks.add(new FakePlayer());
-        array_hacks.add(new Rage());
+        array_hacks.add(new NoFall());
+        array_hacks.add(new GameInfo());
+        array_hacks.add(new ChatSuffix());
+        array_hacks.add(new CoordHud());
+        array_hacks.add(new AntiFog());
+
 
 
     }
+
+
 
     private static final Random RANDOM = new Random();
 

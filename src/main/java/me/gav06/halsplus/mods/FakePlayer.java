@@ -9,7 +9,7 @@ import java.util.UUID;
 public class FakePlayer extends Module {
 
     public FakePlayer() {
-        super("FakePlayer", Keyboard.KEY_M);
+        super("FakePlayer", Keyboard.KEY_L);
     }
 
     private EntityOtherPlayerMP fake_player;

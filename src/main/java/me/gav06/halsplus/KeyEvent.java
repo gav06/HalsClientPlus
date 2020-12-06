@@ -11,6 +11,7 @@ public class KeyEvent {
     public void KeyPress(InputEvent.KeyInputEvent event) {
         if (Keyboard.getEventKeyState()) {
             key = Keyboard.getEventKey();
+
             if (key == Keyboard.KEY_RSHIFT) {
                 GuiOpen.toggle();
             }

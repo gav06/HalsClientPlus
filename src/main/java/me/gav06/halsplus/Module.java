@@ -1,6 +1,10 @@
 package me.gav06.halsplus;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.event.sound.SoundEvent;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public class Module {
     public String name;
@@ -29,12 +33,14 @@ public class Module {
             onDisable();
         }
     }
-
+    
     public void onEnable() {
-
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
     public void onDisable() {
-
+        MinecraftForge.EVENT_BUS.unregister(this);
     }
+
+
 }
