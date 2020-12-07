@@ -53,6 +53,8 @@ public class Halsplus {
         array_hacks.add(new ChatSuffix());
         array_hacks.add(new CoordHud());
         array_hacks.add(new AntiFog());
+        array_hacks.add(new Greentext());
+        array_hacks.add(new FakeDupe());
 
 
 
