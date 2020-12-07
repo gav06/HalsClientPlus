@@ -1,6 +1,7 @@
 package me.gav06.halsplus.mods;
 
 import me.gav06.halsplus.Module;
+import me.gav06.halsplus.RenderUtil;
 import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -47,30 +48,30 @@ public class CoordHud extends Module {
 
                 switch (mc.player.dimension) {
                     case 0:
-                        mc.fontRenderer.drawStringWithShadow("( X: " + round(x/8,1) + " Z: " + round(z/8,1) + " )",2,height - 34,-1);
-                        mc.fontRenderer.drawStringWithShadow("X: " +  x + " Y: " + y + " Z: " + z, 2, height - 24, -1);
+                        RenderUtil.drawTextWithBackdrop("( X: " + round(x/8,1) + " Z: " + round(z/8,1) + " )",2,height - 34,-1);
+                        RenderUtil.drawTextWithBackdrop("X: " +  x + " Y: " + y + " Z: " + z, 2, height - 24, -1);
                         break;
                     case -1:
-                        mc.fontRenderer.drawStringWithShadow("( X: " + round(x*8,1) + " Z: " + round(z*8,1) + " )",2,height - 34,-1);
-                        mc.fontRenderer.drawStringWithShadow("X: " +  x + " Y: " + y + " Z: " + z, 2, height - 24, -1);
+                        RenderUtil.drawTextWithBackdrop("( X: " + round(x*8,1) + " Z: " + round(z*8,1) + " )",2,height - 34,-1);
+                        RenderUtil.drawTextWithBackdrop("X: " +  x + " Y: " + y + " Z: " + z, 2, height - 24, -1);
                         break;
                     case 1:
-                        mc.fontRenderer.drawStringWithShadow("X: " +  x + " Y: " + y + " Z: " + z, 2, height - 24, -1);
+                        RenderUtil.drawTextWithBackdrop("X: " +  x + " Y: " + y + " Z: " + z, 2, height - 24, -1);
                         break;
                 }
             } else {
 
                 switch (mc.player.dimension) {
                     case 0:
-                        mc.fontRenderer.drawStringWithShadow("( X: " + round(x/8,1) + " Z: " + round(z/8,1) + " )",2,height - 20,-1);
-                        mc.fontRenderer.drawStringWithShadow("X: " +  x + " Y: " + y + " Z: " + z, 2, height - 10, -1);
+                        RenderUtil.drawTextWithBackdrop("( X: " + round(x/8,1) + " Z: " + round(z/8,1) + " )",2,height - 20,-1);
+                        RenderUtil.drawTextWithBackdrop("X: " +  x + " Y: " + y + " Z: " + z, 2, height - 10, -1);
                         break;
                     case -1:
-                        mc.fontRenderer.drawStringWithShadow("( X: " + round(x*8,1) + " Z: " + round(z*8,1) + " )",2,height - 20,-1);
-                        mc.fontRenderer.drawStringWithShadow("X: " +  x + " Y: " + y + " Z: " + z, 2, height - 10, -1);
+                        RenderUtil.drawTextWithBackdrop("( X: " + round(x*8,1) + " Z: " + round(z*8,1) + " )",2,height - 20,-1);
+                        RenderUtil.drawTextWithBackdrop("X: " +  x + " Y: " + y + " Z: " + z, 2, height - 10, -1);
                         break;
                     case 1:
-                        mc.fontRenderer.drawStringWithShadow("X: " +  x + " Y: " + y + " Z: " + z, 2, height - 10, -1);
+                        RenderUtil.drawTextWithBackdrop("X: " +  x + " Y: " + y + " Z: " + z, 2, height - 10, -1);
                         break;
                 }
             }
